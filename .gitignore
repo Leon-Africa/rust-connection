@@ -1,1 +1,52 @@
+# Binaries for programs and tests
+/debug
 /target
+
+# Cargo package manager files
+Cargo.lock
+*.rs.bk
+
+# Generated documentation
+/target/doc
+
+# Build artifacts
+/target/debug
+/target/release
+
+# Incremental compilation files
+/target/.incremental
+/target/.fingerprint
+
+# Output of 'cargo test' with the --benches option
+/target/criterion
+
+# Rustup related files
+rust-toolchain
+
+# IDE and editor files
+.idea/
+*.swp
+*.swo
+*.swn
+*.sws
+*.swp
+*.swm
+*.swo
+*.bak
+*.tmp
+*.temp
+
+# VS Code
+.vscode/
+
+# IntelliJ IDEA
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db

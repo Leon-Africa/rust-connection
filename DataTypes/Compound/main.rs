@@ -24,4 +24,23 @@ fn main() {
 
     let mix_tuple = ("Bob", 30, false, [1, 2,3,4,5]);
     println!("Mix Tuple: {:?}", mix_tuple);
+
+    //Slices
+    // Slices are a view into a contiguous [uninterrupted/adjacent] sequence of elements
+    // Slices are not a type, but a reference to a contiguous sequence of elements
+
+    //slices: [1,2,3,4,5] // no need to jump between memory locations
+    let slice: &[i32] = &[1,2,3,4,5];
+    println!("Slice: {:?}", slice);
+    
+
+    // A list of animal names stored as string slices (&str)
+    // The string slices refer to string literals in the program's binary
+    let animals: &[&str] = &["lion", "cheetah", "leopard"];
+    println!("Animals: {:?}", animals);
+
+    // A list of book names stored as String objects
+    // Each String is a growable, heap-allocated string
+    let letters: &[String] = &["Galatians".to_string(), "Ephesians".to_string(), "Philippians".to_string()];
+    println!("Letters: {:?}", letters);
 }
