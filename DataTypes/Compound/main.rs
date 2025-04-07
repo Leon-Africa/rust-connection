@@ -1,5 +1,5 @@
 //Compound Types
-// arrayes, tuples. clices and strings (slice string considered as primitive)
+// arrays, tuples. slices and strings (slice string (&str) considered as primitive)
 
 // Arrayes
 fn main() {
@@ -14,4 +14,14 @@ fn main() {
     println!("Fruits: {}", fruits[0]); // prints apple
     println!("Fruits: {}", fruits[1]); // prints banana
     println!("Fruits: {}", fruits[2]); // prints cherry
+
+    //Tuples
+    // Different types of elements of fixed size
+    let human = ("Alice", 30, false);
+    println!("Tuple: {:?}", human);
+    // let human: (&str, i32, bool) = ("Alice", 30, false); // for accuracy
+    // let human: (String, i32, bool) = ("Alice", 30, to_string()); // String to string slice - will not compile without conversion
+
+    let mix_tuple = ("Bob", 30, false, [1, 2,3,4,5]);
+    println!("Mix Tuple: {:?}", mix_tuple);
 }
