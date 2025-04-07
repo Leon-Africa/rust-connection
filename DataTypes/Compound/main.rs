@@ -43,4 +43,32 @@ fn main() {
     // Each String is a growable, heap-allocated string
     let letters: &[String] = &["Galatians".to_string(), "Ephesians".to_string(), "Philippians".to_string()];
     println!("Letters: {:?}", letters);
+
+    //In rust all variables are immutable by default
+    // To make a variable mutable, we use the mut keyword
+
+    // Strings vs String Slices(&str)
+    // String is a growable, heap-allocated string [growable, mutable, owned]
+    let message: String = String::from("I am The Way The Truth and The Life no one comes to the Father but by me. (John 14 vs 6)");
+    println!("Jesus says: {}", message);  
+
+    // you can use the mut datatype to make something mutable
+    let mut elements: String = String::from("earth wind");
+    elements.push_str(" fire water");
+    println!("Elements: {}", elements);
+
+    // String slice (&str) is a reference to a string [fixed size, immutable, borrowed]
+    // good for memory efficiency no need to copy the same variable
+    
+    //slicing a known String
+    let written_slice: &str = &message[0..72];   
+    let verse_slice: &str = &message[73..];
+    println!("Jesus says: {}. Written in the Bible in {}", written_slice, verse_slice); 
+
+    // The stack is faster than the heap
+    // The stack cannot have mutable data types whereas the heap can
+    // The stack is a fixed size, contiguous memory location
+    // The heap is a dynamic size, non-contiguous memory location
+    // The stack is a LIFO (Last In First Out) data structure
+    // The heap is a FIFO (First In First Out) data structure
 }
