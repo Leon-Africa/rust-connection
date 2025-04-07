@@ -1,3 +1,3 @@
 # rust-connection
-# rust-connection
-# rust-connection
+
+A repo for an intro summary to Rust 
