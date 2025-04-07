@@ -46,4 +46,38 @@ fn main() {
     //now you can use _c again
     println!("c: {}", _c); // this will print c: 15
     //You can have multiple immutable references to a value in a particular scope, but you cannot have mutable references at the same time.
+
+    let mut account: BankAccount = BankAccount {
+        owner: "Alice".to_string(),
+        balance: 1000.0
+    };
+
+    //Immutable borrow to check the balance
+    account.check_balance(); // this will print Account owned by Alice has a balance of 1000.0
+
+    //Mutable borrow to withdraw money
+    account.withdraw(100.0); // this will print Withdrawing 100.0 from Alice
+
+    account.check_balance(); //the balance will be lower now
+}
+
+//Demonstraion on one mutable reference or many immutable references
+struct BankAccount {
+    owner: String,
+    balance: f64
+}
+
+// This works because the borrow checker ensures that you cannot have mutable and immutable references at the same time
+// Each call is in a separate scope so there is no overlap
+impl BankAccount{
+    //Ensure you cannot simultaneously have mutable access to the account to  update the balance
+    // And immutable access for reading the owners name
+    fn withdraw(&mut self, amount:f64){
+        println!("Withdrawing {} from {}", amount, self.owner);
+        self.balance -= amount;
+    }
+
+    fn check_balance(&self){
+        println!("Account owned by {} has a balance of {}", self.owner, self.balance);
+    }
 }
